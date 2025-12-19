@@ -1,0 +1,54 @@
+{
+  "id": "gym-management",
+  "name": "Gym Management System",
+  "shortDescription": "نظام متكامل لإدارة صالات الرياضة والنوادي",
+  "fullDescription": "إدارة شاملة للأعضاء، الاشتراكات، الحضور، المدربين والتقارير المالية",
+  "version": "3.1.0",
+  "coverImage": "Gym Management System/Screenshot 2025-12-19 181957.png",
+  "downloadLink": "Gym Management System/Gym Management System Setup 3.1.0.exe",
+  "images": [
+    "Gym Management System/Screenshot 2025-12-19 181957.png",
+    "Gym Management System/Screenshot 2025-12-19 182004.png",
+    "Gym Management System/Screenshot 2025-12-19 182009.png",
+    "Gym Management System/Screenshot 2025-12-19 182014.png",
+    "Gym Management System/Screenshot 2025-12-19 182020.png",
+    "Gym Management System/Screenshot 2025-12-19 182303.png",
+    "Gym Management System/Screenshot 2025-12-19 182345.png",
+    "Gym Management System/Screenshot 2025-12-19 182350.png",
+    "Gym Management System/Screenshot 2025-12-19 182452.png",
+    "Gym Management System/Screenshot 2025-12-19 182459.png",
+    "Gym Management System/Screenshot 2025-12-19 182513.png",
+    "Gym Management System/Screenshot 2025-12-19 182734.png",
+    "Gym Management System/Screenshot_19-12-2025_182049_localhost.jpeg",
+    "Gym Management System/Screenshot_19-12-2025_182146_localhost.jpeg",
+    "Gym Management System/Screenshot_19-12-2025_182319_localhost.jpeg",
+    "Gym Management System/Screenshot_19-12-2025_182425_localhost.jpeg",
+    "Gym Management System/Screenshot_19-12-2025_18276_localhost.jpeg"
+  ],
+  "features": [
+    {
+      "title": "إدارة الأعضاء",
+      "description": "تسجيل وإدارة بيانات الأعضاء بشكل منظم وسهل"
+    },
+    {
+      "title": "نظام الاشتراكات",
+      "description": "متابعة الاشتراكات والتجديدات وإرسال التنبيهات"
+    },
+    {
+      "title": "تتبع الحضور",
+      "description": "نظام حضور وانصراف متطور لمراقبة الأعضاء"
+    },
+    {
+      "title": "التقارير المالية",
+      "description": "تقارير شاملة عن الإيرادات والمصروفات"
+    },
+    {
+      "title": "إدارة المدربين",
+      "description": "متابعة جداول المدربين وحصصهم التدريبية"
+    },
+    {
+      "title": "واجهة احترافية",
+      "description": "تصميم عصري وسهل الاستخدام مع دعم اللغة العربية"
+    }
+  ]
+}

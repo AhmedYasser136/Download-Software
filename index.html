@@ -4,233 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="برنامج إدارة مخزون الإلكترونيات - نظام سهل وفعال لتنظيم وإدارة القطع الإلكترونية">
-    <title>Electronics-Inventory-Management</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            width: 100%;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .logo {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: #2d3748;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #718096;
-            margin-bottom: 50px;
-            line-height: 1.8;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-            text-align: right;
-        }
-
-        .feature {
-            background: #f7fafc;
-            padding: 25px 20px;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .feature h3 {
-            font-size: 1.1rem;
-            color: #2d3748;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .feature p {
-            font-size: 0.95rem;
-            color: #718096;
-        }
-
-        .download-section {
-            margin-top: 60px;
-        }
-
-        .download-btn {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 18px 50px;
-            font-size: 1.3rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 12px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
-        }
-
-        .download-btn:active {
-            transform: translateY(-1px);
-        }
-
-        .version {
-            color: #a0aec0;
-            font-size: 0.9rem;
-            margin-top: 15px;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #e2e8f0;
-            color: #a0aec0;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 25px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1.05rem;
-            }
-
-            .features {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .download-btn {
-                padding: 15px 40px;
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 36px;
-            }
-
-            h1 {
-                font-size: 1.6rem;
-            }
-
-            .subtitle {
-                font-size: 0.95rem;
-            }
-
-            .download-btn {
-                width: 100%;
-                padding: 15px 30px;
-            }
-        }
-    </style>
+    <meta name="description" content="منصة لعرض وتحميل تطبيقات سطح المكتب الاحترافية">
+    <title>Download Software - Desktop Applications</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Electronics-Inventory-Management</h1>
-        <p class="subtitle">
-            نظام احترافي وسهل لإدارة مخزون الإلكترونيات<br>
-            إدارة شاملة للمقاومات، الليدات، الـ ICs، القطع الإلكترونية، الكميات والتنظيم
-        </p>
-
-        <div class="features">
-            <div class="feature">
-                <h3>إدارة المخزون بسهولة</h3>
-                <p>تنظيم كامل لجميع القطع الإلكترونية في مكان واحد مع إمكانية تصنيفها حسب النوع والفئة</p>
-            </div>
-
-            <div class="feature">
-
-                <h3>البحث السريع</h3>
-                <p>ابحث عن أي قطعة في ثوانٍ معدودة باستخدام الاسم أو الرمز أو القيمة</p>
-            </div>
-
-            <div class="feature">
-
-                <h3>تتبع الكميات</h3>
-                <p>راقب مستويات المخزون واحصل على تنبيهات عندما تقل الكميات</p>
-            </div>
-
-            <div class="feature">
-
-                <h3>حفظ آمن</h3>
-                <p>بياناتك محفوظة بأمان على جهازك دون الحاجة للاتصال بالإنترنت</p>
-            </div>
-
-            <div class="feature">
-
-                <h3>واجهة بسيطة</h3>
-                <p>سهلة الاستخدام ولا تحتاج لخبرة تقنية مع تصميم عصري ومريح للعين</p>
-            </div>
-
-            <div class="feature">
-
-                <h3>سريع وخفيف</h3>
-                <p>البرنامج خفيف على النظام ويعمل بسرعة كبيرة حتى مع آلاف القطع</p>
-            </div>
+    <header>
+        <div class="container">
+            <h1 class="logo"> Download Software</h1>
+            <p class="tagline">تطبيقات سطح المكتب الاحترافية</p>
         </div>
+    </header>
 
-        <div class="download-section">
-            <a href="Electronics Management System Setup 1.0.0.exe" class="download-btn" download>
-                تحميل البرنامج الآن
-            </a>
-            <p class="version">متوافق مع Windows</p>
+    <main>
+        <div class="container">
+            <section class="apps-section">
+                <h2>التطبيقات المتاحة</h2>
+                <div id="apps-grid" class="apps-grid">
+                    <!-- Cards will be generated dynamically here -->
+                </div>
+            </section>
         </div>
+    </main>
 
-        <footer>
-            <p>© 2025 Electronics-Inventory-Management - جميع الحقوق محفوظة</p>
-        </footer>
-    </div>
+    <footer>
+        <div class="container">
+            <p>© 2025 Download Software - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

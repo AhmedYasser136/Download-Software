@@ -91,7 +91,31 @@ function createProgramCard(program) {
 }
 
 function handleImageError(img) {
-    // If image fails to load, hide it and show a placeholder
+    // If image fails to load, try the next available image
+    const card = img.closest('.app-card');
+    const programId = card.getAttribute('data-program-id');
+    const program = programsData.programs.find(p => p.id === programId);
+
+    if (!program || !program.images || program.images.length === 0) {
+        showNoImagePlaceholder(img);
+        return;
+    }
+
+    // Get current failed image
+    const currentSrc = img.src.split('/').pop();
+    const currentIndex = program.images.indexOf(currentSrc);
+
+    // Try next image
+    if (currentIndex < program.images.length - 1) {
+        const nextImage = program.images[currentIndex + 1];
+        img.src = `${program.folder}/${nextImage}`;
+    } else {
+        // No more images to try, show placeholder
+        showNoImagePlaceholder(img);
+    }
+}
+
+function showNoImagePlaceholder(img) {
     const cardImage = img.closest('.app-card-image');
     if (cardImage) {
         img.style.display = 'none';

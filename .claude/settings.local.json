@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(tree:*)",
-      "Bash(ls -la \"d:\\\\PROJ\\\\Download-Software\\\\Electronics Management System\"\" 2>nul || dir \"d:PROJDownload-SoftwareElectronics Management System\"\")"
+      "Bash(ls -la \"d:\\\\PROJ\\\\Download-Software\\\\Electronics Management System\"\" 2>nul || dir \"d:PROJDownload-SoftwareElectronics Management System\"\")",
+      "Bash(dir:*)"
     ]
   }
 }

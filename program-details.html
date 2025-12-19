@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تفاصيل البرنامج">
+    <title>تفاصيل البرنامج - Download Software</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <button class="btn-back" onclick="goBack()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    العودة
+                </button>
+                <h1 class="logo">Download Software</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="program-details">
+                <div class="program-header" id="program-header">
+                    <!-- Program header will be generated dynamically -->
+                </div>
+
+                <div class="program-images" id="program-images">
+                    <!-- Program images will be generated dynamically -->
+                </div>
+
+                <div class="program-download-section">
+                    <button class="btn btn-download-large" id="download-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 16L7 11L8.4 9.6L11 12.2V4H13V12.2L15.6 9.6L17 11L12 16Z" fill="currentColor"/>
+                            <path d="M4 18H20V20H4V18Z" fill="currentColor"/>
+                        </svg>
+                        <span>تحميل البرنامج</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Download Software - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- Image Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+        <button class="lightbox-prev" onclick="changeLightboxImage(-1)">&#10094;</button>
+        <button class="lightbox-next" onclick="changeLightboxImage(1)">&#10095;</button>
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/details.js"></script>
+</body>
+
+</html>

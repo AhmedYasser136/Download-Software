@@ -34,15 +34,36 @@ function createProgramCard(program) {
     card.className = 'app-card';
     card.setAttribute('data-program-id', program.id);
 
-    // Get the first image as thumbnail
-    const thumbnailPath = program.images.length > 0
-        ? `${program.folder}/${program.images[0]}`
-        : 'assets/images/placeholder.png';
+    // Get thumbnail image: prioritize 'default' image, otherwise use first image
+    const hasImages = program.images && program.images.length > 0;
+    let thumbnailImage = '';
+
+    if (hasImages) {
+        // Look for an image named 'default' (with any extension)
+        const defaultImage = program.images.find(img =>
+            img.toLowerCase().startsWith('default.')
+        );
+
+        // Use default image if found, otherwise use first image
+        thumbnailImage = defaultImage || program.images[0];
+    }
+
+    const thumbnailPath = thumbnailImage ? `${program.folder}/${thumbnailImage}` : '';
 
     // Build card HTML
+    const imageHTML = hasImages
+        ? `<img src="${thumbnailPath}" alt="${program.name}" onerror="handleImageError(this)">`
+        : `<div class="no-image-placeholder">
+               <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <rect width="64" height="64" rx="8" fill="#e2e8f0"/>
+                   <path d="M32 20C29.8 20 28 21.8 28 24C28 26.2 29.8 28 32 28C34.2 28 36 26.2 36 24C36 21.8 34.2 20 32 20ZM20 40V44H44V36L36 28L28 36L24 32L20 40Z" fill="#94a3b8"/>
+               </svg>
+               <p>لا توجد صور</p>
+           </div>`;
+
     card.innerHTML = `
-        <div class="app-card-image">
-            <img src="${thumbnailPath}" alt="${program.name}" onerror="this.src='assets/images/placeholder.png'">
+        <div class="app-card-image ${!hasImages ? 'no-image' : ''}">
+            ${imageHTML}
             <div class="image-count">${program.images.length} صور</div>
         </div>
         <div class="app-card-content">
@@ -67,6 +88,24 @@ function createProgramCard(program) {
     `;
 
     return card;
+}
+
+function handleImageError(img) {
+    // If image fails to load, hide it and show a placeholder
+    const cardImage = img.closest('.app-card-image');
+    if (cardImage) {
+        img.style.display = 'none';
+        cardImage.classList.add('no-image');
+        cardImage.insertAdjacentHTML('afterbegin', `
+            <div class="no-image-placeholder">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="64" height="64" rx="8" fill="#e2e8f0"/>
+                    <path d="M32 20C29.8 20 28 21.8 28 24C28 26.2 29.8 28 32 28C34.2 28 36 26.2 36 24C36 21.8 34.2 20 32 20ZM20 40V44H44V36L36 28L28 36L24 32L20 40Z" fill="#94a3b8"/>
+                </svg>
+                <p>الصورة غير متاحة</p>
+            </div>
+        `);
+    }
 }
 
 function viewProgramDetails(programId) {

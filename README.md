@@ -89,6 +89,7 @@ The script will monitor your program folders and automatically regenerate data.j
 2. **Add files** to the folder:
    - Images (JPG, PNG, GIF, WebP, BMP, SVG)
    - One .exe file (for download)
+   - *Optional*: Add an image named `default.png` (or .jpg, .jpeg, etc.) to use as the card thumbnail
 
 3. **Run the generator**:
    ```bash
@@ -161,6 +162,11 @@ Images are automatically:
 - Displayed in gallery
 - Shown in lightbox viewer
 
+**Card Thumbnail Selection:**
+- If a file named `default.png` (or .jpg, .jpeg, etc.) exists, it will be used as the card thumbnail
+- Otherwise, the first image (alphabetically) is used as the thumbnail
+- This allows you to control which image appears on the program card
+
 ## 💾 Executable Files
 
 - Only `.exe` files are detected as executables
@@ -211,10 +217,11 @@ The generator automatically ignores:
 ## 💡 Tips
 
 1. **Naming Convention**: Use descriptive folder names - they become program titles
-2. **First Image**: The first image (alphabetically) becomes the thumbnail
-3. **Version Numbers**: Include version in .exe filename for auto-detection
-4. **Image Order**: Rename images with numbers to control order (01-image.png, 02-image.png)
-5. **Testing**: After generating, always refresh your browser to see changes
+2. **Custom Thumbnail**: Add a file named `default.png` (or .jpg) to set a custom card thumbnail
+3. **First Image**: If no `default` image exists, the first image (alphabetically) becomes the thumbnail
+4. **Version Numbers**: Include version in .exe filename for auto-detection
+5. **Image Order**: Rename images with numbers to control order (01-image.png, 02-image.png)
+6. **Testing**: After generating, always refresh your browser to see changes
 
 ## 🐛 Troubleshooting
 

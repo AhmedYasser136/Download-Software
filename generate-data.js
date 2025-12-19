@@ -169,17 +169,17 @@ function preserveDescriptions(programs) {
  * Main function
  */
 function main() {
-    console.log('🔍 Scanning program folders...\n');
+    // console.log('🔍 Scanning program folders...\n');
 
     const programFolders = getProgramFolders();
 
     if (programFolders.length === 0) {
-        console.log('❌ No program folders found!');
+        // console.log('❌ No program folders found!');
         console.log('   Make sure you have folders with programs in the root directory.');
         process.exit(1);
     }
 
-    console.log(`📁 Found ${programFolders.length} program folder(s):\n`);
+    // console.log(`📁 Found ${programFolders.length} program folder(s):\n`);
 
     const programs = [];
 
@@ -188,10 +188,10 @@ function main() {
         programs.push(program);
 
         console.log(`   ✓ ${folder}`);
-        console.log(`     - Images: ${program.images.length}`);
-        console.log(`     - Executable: ${program.exe || 'None found'}`);
-        console.log(`     - Version: ${program.version}`);
-        console.log('');
+        // console.log(`     - Images: ${program.images.length}`);
+        // console.log(`     - Executable: ${program.exe || 'None found'}`);
+        // console.log(`     - Version: ${program.version}`);
+        // console.log('');
     });
 
     // Preserve custom descriptions if --preserve flag is used
@@ -213,11 +213,11 @@ function main() {
     fs.writeFileSync(CONFIG.outputFile, dataJSContent, 'utf8');
 
     console.log('✅ Successfully generated data.js!');
-    console.log(`   File: ${CONFIG.outputFile}`);
-    console.log(`   Programs: ${programs.length}`);
-    console.log(`   Total images: ${programs.reduce((sum, p) => sum + p.images.length, 0)}`);
-    console.log('\n💡 Tip: Use --preserve flag to keep custom descriptions when regenerating');
-    console.log('   Example: node generate-data.js --preserve\n');
+    // console.log(`   File: ${CONFIG.outputFile}`);
+    // console.log(`   Programs: ${programs.length}`);
+    // console.log(`   Total images: ${programs.reduce((sum, p) => sum + p.images.length, 0)}`);
+    // console.log('\n💡 Tip: Use --preserve flag to keep custom descriptions when regenerating');
+    // console.log('   Example: node generate-data.js --preserve\n');
 }
 
 // Run the script

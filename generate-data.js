@@ -16,6 +16,7 @@ const CONFIG = {
     outputFile: path.join(__dirname, 'assets', 'js', 'data.js'),
     excludeDirs: ['assets', 'node_modules', '.git', '.vscode'],
     imageExtensions: ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp', '.svg'],
+    videoExtensions: ['.mp4', '.webm', '.ogg', '.mov'],
     exeExtension: '.exe'
 };
 
@@ -25,6 +26,21 @@ const CONFIG = {
 function isImageFile(filename) {
     const ext = path.extname(filename).toLowerCase();
     return CONFIG.imageExtensions.includes(ext);
+}
+
+/**
+ * Check if a file is a video
+ */
+function isVideoFile(filename) {
+    const ext = path.extname(filename).toLowerCase();
+    return CONFIG.videoExtensions.includes(ext);
+}
+
+/**
+ * Check if a file is media (image or video)
+ */
+function isMediaFile(filename) {
+    return isImageFile(filename) || isVideoFile(filename);
 }
 
 /**
@@ -54,8 +70,9 @@ function scanProgramFolder(folderName) {
     const folderPath = path.join(CONFIG.rootDir, folderName);
     const files = fs.readdirSync(folderPath);
 
-    // Find images
+    // Find media files (images and videos)
     const images = files.filter(file => isImageFile(file)).sort();
+    const videos = files.filter(file => isVideoFile(file)).sort();
 
     // Find exe file
     const exeFiles = files.filter(file => isExeFile(file));
@@ -83,7 +100,8 @@ function scanProgramFolder(folderName) {
         description,
         exe: exeFile || '',
         version,
-        images
+        images,
+        videos
     };
 }
 
@@ -123,6 +141,14 @@ const programsData = {
         program.images.forEach((image, imgIndex) => {
             const isLastImage = imgIndex === program.images.length - 1;
             content += `                "${image}"${isLastImage ? '' : ','}\n`;
+        });
+
+        content += `            ],\n`;
+        content += `            videos: [\n`;
+
+        program.videos.forEach((video, vidIndex) => {
+            const isLastVideo = vidIndex === program.videos.length - 1;
+            content += `                "${video}"${isLastVideo ? '' : ','}\n`;
         });
 
         content += `            ]\n`;

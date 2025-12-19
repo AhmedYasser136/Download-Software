@@ -36,6 +36,9 @@ function createProgramCard(program) {
 
     // Get thumbnail image: prioritize 'default' image, otherwise use first image
     const hasImages = program.images && program.images.length > 0;
+    const hasVideos = program.videos && program.videos.length > 0;
+    const totalMedia = (program.images?.length || 0) + (program.videos?.length || 0);
+
     let thumbnailImage = '';
 
     if (hasImages) {
@@ -61,10 +64,22 @@ function createProgramCard(program) {
                <p>لا توجد صور</p>
            </div>`;
 
+    // Media count label
+    let mediaLabel = '';
+    if (hasImages && hasVideos) {
+        mediaLabel = `${totalMedia} ملف`;
+    } else if (hasImages) {
+        mediaLabel = `${program.images.length} صور`;
+    } else if (hasVideos) {
+        mediaLabel = `${program.videos.length} فيديو`;
+    } else {
+        mediaLabel = '0 ملفات';
+    }
+
     card.innerHTML = `
         <div class="app-card-image ${!hasImages ? 'no-image' : ''}">
             ${imageHTML}
-            <div class="image-count">${program.images.length} صور</div>
+            <div class="image-count">${mediaLabel}</div>
         </div>
         <div class="app-card-content">
             <h3 class="app-title">${program.name}</h3>

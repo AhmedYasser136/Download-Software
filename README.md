@@ -88,6 +88,7 @@ The script will monitor your program folders and automatically regenerate data.j
 
 2. **Add files** to the folder:
    - Images (JPG, PNG, GIF, WebP, BMP, SVG)
+   - Videos (MP4, WebM, OGG, MOV)
    - One .exe file (for download)
    - *Optional*: Add an image named `default.png` (or .jpg, .jpeg, etc.) to use as the card thumbnail
 
@@ -146,12 +147,13 @@ npm run generate-preserve
 | `npm run generate-preserve` | Generate while keeping custom descriptions |
 | `npm run watch` | Auto-regenerate on file changes |
 
-## 🖼️ Image Support
+## 🖼️ Media Support
 
+### Images
 Supported image formats:
 - JPG/JPEG
 - PNG
-- GIF
+- GIF (animated GIFs supported!)
 - WebP
 - BMP
 - SVG
@@ -162,9 +164,23 @@ Images are automatically:
 - Displayed in gallery
 - Shown in lightbox viewer
 
+### Videos
+Supported video formats:
+- MP4
+- WebM
+- OGG
+- MOV
+
+Videos are automatically:
+- Detected and listed
+- Sorted alphabetically
+- Displayed with HTML5 video player
+- Playable directly in the details page
+
 **Card Thumbnail Selection:**
 - If a file named `default.png` (or .jpg, .jpeg, etc.) exists, it will be used as the card thumbnail
 - Otherwise, the first image (alphabetically) is used as the thumbnail
+- Videos are NOT used as thumbnails (images only)
 - This allows you to control which image appears on the program card
 
 ## 💾 Executable Files

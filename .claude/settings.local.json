@@ -3,7 +3,8 @@
     "allow": [
       "Bash(dir:*)",
       "Bash(ls:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(node generate-data.js:*)"
     ]
   }
 }

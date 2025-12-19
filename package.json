@@ -1,0 +1,17 @@
+{
+  "name": "download-software",
+  "version": "1.0.0",
+  "description": "Dynamic software download page with automatic folder scanning",
+  "scripts": {
+    "generate": "node generate-data.js",
+    "generate-preserve": "node generate-data.js --preserve",
+    "watch": "node watch-and-generate.js"
+  },
+  "keywords": [
+    "download",
+    "software",
+    "dynamic"
+  ],
+  "author": "",
+  "license": "MIT"
+}
